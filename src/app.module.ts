@@ -20,6 +20,7 @@ import { UsersModule } from './users/users.module';
           database: process.env.POSTGRES_DB,
           entities: [User],
           synchronize: true,
+          autoLoadEntities: true,
         }),
         UsersModule,
       ],
