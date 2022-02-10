@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Role } from "src/roles/roles.model";
+import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity()
@@ -24,4 +25,8 @@ export class User {
     @ApiProperty({example: 'Спам', description: 'Причина бана'})
     @Column({nullable: true})
     banReason: string;
+
+    @ManyToMany(() => Role)
+    @JoinTable()
+    roles: Role[];
 }
