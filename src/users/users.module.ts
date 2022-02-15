@@ -12,5 +12,8 @@ import { UsersService } from './users.service';
     TypeOrmModule.forFeature([User]),
     RolesModule,
   ],
+  exports: [
+    UsersService,
+  ]
 })
 export class UsersModule {}

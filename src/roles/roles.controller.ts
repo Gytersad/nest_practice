@@ -7,8 +7,8 @@ export class RolesController {
     constructor(private roleService: RolesService) {}
 
     @Post()
-    create(@Body() dto: CreateRoleDto) {
-        return this.roleService.createRole(dto)
+    create(@Body() roleDto: CreateRoleDto) {
+        return this.roleService.createRole(roleDto)
     }
 
     @Get('/:value')
