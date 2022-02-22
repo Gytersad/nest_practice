@@ -20,7 +20,7 @@ export class UsersService {
 
         const newUser = await this.userRepository.save(userDto);
 
-        const role = await this.roleService.getRoleByValue('ADMIN')
+        const role = await this.roleService.getRoleByValue('USER')
 
         const newUserWithRole = await this.userRepository.findOne(newUser.id, { relations: ["roles"] });
         newUserWithRole.roles.push(role)
